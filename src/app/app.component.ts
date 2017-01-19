@@ -1,6 +1,6 @@
 import { Component, Output } from '@angular/core';
 import { Ng2MapComponent } from 'ng2-map';
-
+import '../../public/styles/mapmarker.css';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
