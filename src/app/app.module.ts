@@ -3,6 +3,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { Ng2MapModule} from 'ng2-map';
+import {SearchComponent} from './search/search.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { Ng2MapModule} from 'ng2-map';
   ],
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    SearchComponent
   ],
   bootstrap: [ AppComponent ]
 })
