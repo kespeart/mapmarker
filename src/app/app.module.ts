@@ -4,17 +4,24 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { Ng2MapModule} from 'ng2-map';
 import {SearchComponent} from './search/search.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SearchAPIService} from './search/search.api.service';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   imports: [
     BrowserModule,
-    Ng2MapModule
+    Ng2MapModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
   ],
   declarations: [
     AppComponent,
     MapComponent,
     SearchComponent
   ],
+  providers: [SearchAPIService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
