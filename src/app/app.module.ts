@@ -6,7 +6,8 @@ import { Ng2MapModule} from 'ng2-map';
 import {SearchComponent} from './search/search.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SearchAPIService} from './search/search.api.service';
-import {HttpModule} from "@angular/http";
+import {HttpModule} from '@angular/http';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {HttpModule} from "@angular/http";
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    CommonModule
   ],
   declarations: [
     AppComponent,

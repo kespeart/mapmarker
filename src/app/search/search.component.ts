@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {BaseComponent} from '../common/base.component';
 import {SearchAPIService} from './search.api.service';
+import {Prediction} from './interfaces/prediction.interface';
 
 @Component({
     selector: 'search',
@@ -10,12 +11,11 @@ import {SearchAPIService} from './search.api.service';
 })
 export class SearchComponent extends BaseComponent implements OnInit{
      searchFrom: FormGroup;
-     predictions: Array<any>;
+     predictions: Array<Prediction>;
 constructor(private searchAPI: SearchAPIService, private formBuilder: FormBuilder){
     super();
-    this.searchFrom = formBuilder.group({
-        search: ''
-    });
+    this.searchFrom = formBuilder.group({search: ''});
+    this.predictions = [];
 }
 
     ngOnInit() {
@@ -26,8 +26,9 @@ constructor(private searchAPI: SearchAPIService, private formBuilder: FormBuilde
                     this.searchAPI
                         .searchPredictions(changes.search)
                         .first()
-                        .subscribe((searchPredictions: any) => {
-                            this.predictions = searchPredictions;
+                        .subscribe((dto: any) => {
+                            this.predictions = dto.predictions;
+                            console.log(this.predictions);
                         });
                 })
         )
@@ -35,6 +36,3 @@ constructor(private searchAPI: SearchAPIService, private formBuilder: FormBuilde
 
 }
 
-
-//TODO turn search into its own module
-// TODO Subscribe to user input
