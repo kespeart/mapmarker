@@ -1,5 +1,5 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 var path = require("path");
 
 app.set('views', __dirname + '/public/views');
@@ -11,5 +11,4 @@ app.listen(8080);
 app.get('/', function (req, res) {
   res.render('index.html');
 });
-
 

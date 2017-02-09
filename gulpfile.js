@@ -6,21 +6,15 @@ var server = require('gulp-express');
 var del = require('del');
 
 gulp.task('build', webpackBuild);
-gulp.task('server', startServer);
+
+gulp.task('server', ()=> server.run(['./server/server.prod.js'], null, false));
 gulp.task('clean', cleanTask);
-
-
+gulp.task('dev', ()=> server.run(['./server/server.dev.js'], null, false));
 gulp.task('prod', gulpSequence('clean', 'build', 'server'));
 
-/*
-* @desc start express server
-*/
-function startServer(){
-    server.run(['server.js'], null, false);
-}
 
 /**
-*@desc run webpack build which will create dist filder
+*@desc run webpack build which will create dist folder
 */
 function webpackBuild(){
     return gulp.src('src/main.ts')
