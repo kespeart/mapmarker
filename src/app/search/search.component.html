@@ -1,8 +1,8 @@
 <div class="search">
     <form [formGroup]="searchFrom">
-        <input type="text" placeholder="Search" class="search-field" formControlName="search">
+        <input type="text" placeholder="search" class="search-field" formControlName="search">
     </form>
     <div class="predictions">
-        <div *ngFor="let prediction of predictions">add prediction</div>
+        <p *ngFor="let prediction of predictions" class="prediction" title="{{prediction.description}}">{{prediction.description}}</p>
     </div>
 </div>

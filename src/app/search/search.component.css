@@ -11,3 +11,27 @@
     padding-left: 5px;
     width: 100%;
 }
+
+.search-field{
+    box-sizing: border-box;
+    font-size: .85em;
+}
+
+.predictions{
+    background-color: white;
+}
+
+p.prediction:hover {
+    background-color: #ededed;
+}
+
+p.prediction{
+  margin: 0;
+  padding: 2px;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: .85em;
+  cursor: pointer;
+}
