@@ -1,12 +1,13 @@
 .search{
     position: absolute;
     z-index: 1;
-    left: 41%;
+    left: 40%;
+    right: 40%;
     top: 5px;
 }
 
 .search .search-field{
     height: 30px;
     padding-left: 5px;
-    width: 383px;
+    width: 100%;
 }
