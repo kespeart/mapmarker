@@ -14,7 +14,7 @@ export class SearchAPIService{
      * @param searchText: string for which search predictions should be made
      */
     searchPredictions(searchText: string): Observable<any>{
-        let url: string = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input='
+        let url: string = '/maps/api/place/autocomplete/json?input='
             .concat(searchText)
             .concat('&key=')
             .concat(API_KEY);

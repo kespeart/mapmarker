@@ -28,7 +28,6 @@ constructor(private searchAPI: SearchAPIService, private formBuilder: FormBuilde
                         .first()
                         .subscribe((dto: any) => {
                             this.predictions = dto.predictions;
-                            console.log(this.predictions);
                         });
                 })
         )
