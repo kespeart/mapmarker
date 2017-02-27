@@ -21,7 +21,7 @@
     background-color: white;
 }
 
-p.prediction:hover {
+.prediction.active {
     background-color: #ededed;
 }
 
