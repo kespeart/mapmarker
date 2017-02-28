@@ -53,6 +53,8 @@ export class SearchComponent extends BaseComponent implements OnInit {
     submit(): void {
         if (!this.predictions.length)return;
         this.item.emit(this.predictions[this.trackingIndex]);
+        this.showPredictions = false;
+        this.searchFrom.setValue({search: ''})
     }
 
     /**
