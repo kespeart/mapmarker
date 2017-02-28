@@ -8,9 +8,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SearchAPIService} from './search/search.api.service';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {CommonModule} from '@angular/common';
+import { OffClickModule } from 'angular2-off-click';
 
 @NgModule({
     imports: [
+        OffClickModule,
         BrowserModule,
         Ng2MapModule,
         FormsModule,

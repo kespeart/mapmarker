@@ -1,8 +1,18 @@
-<div class="search">
-    <form [formGroup]="searchFrom">
-        <input type="text" placeholder="search" class="search-field" formControlName="search">
+<div class="search" (offClick)="offClick($event)">
+    <form [formGroup]="searchFrom" (ngSubmit)="submit()">
+        <input type="text" placeholder="search" class="search-field" formControlName="search"
+               (focus)="onFocus($event)"
+               (keydown)="arrowKeyNavigation($event)">
     </form>
-    <div class="predictions">
-        <p *ngFor="let prediction of predictions" class="prediction" title="{{prediction.description}}">{{prediction.description}}</p>
+    <div class="predictions"  *ngIf="showPredictions">
+
+        <p *ngFor="let prediction of predictions let i = index"
+           class="prediction"
+           (mouseover)="setIndex(i)"
+           (click)="submit()"
+           [ngClass]="{'active': i === trackingIndex}"
+           title="{{prediction.description}}">
+            {{prediction.description}}
+        </p>
     </div>
 </div>
